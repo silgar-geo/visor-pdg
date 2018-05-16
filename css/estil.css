@@ -1,0 +1,554 @@
+/*  CONTINGUT JAVI */
+body, html {
+  height: 100%;
+}
+body {
+  height: 100%;
+	font-family: 'Roboto', helvetica, verdana;
+	color: #515151;
+}
+
+/* _________________________*/
+/*  ELEMENTS OPENLAYERS     */
+/*__________________________*/
+#visor{
+  margin-top: -148px;
+}
+
+#map{
+	position: absolute; 
+	left:0px; 
+	top:0px; 
+	width:100%; 
+	height:100%; 
+	z-index:1; 
+	padding: 0; 
+	margin: 0;
+}
+
+.ol-attribution{
+  display: none;
+}
+
+ /* ESTIL ZOOM  */
+.ol-zoom {
+  top:170px;
+}
+
+.ol-zoom .ol-zoom-out {
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+.ol-zoom .ol-zoom-in {
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+
+.ol-control {
+    position: absolute;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.ol-control button {
+    display: block;
+    margin: 1px;
+    padding: 0;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    height: 27px;
+    width: 27px;
+    line-height: 5px;
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+}
+
+.ol-control button:focus, .ol-control button:hover {
+    text-decoration: none;
+    background-color: #a9931b;
+}
+
+/* ESTIL LAYERSWITCHER   */
+.layer-switcher{
+	top:170px;
+}
+
+.layer-switcher button {
+    float: right;
+    background: rgba(255, 255, 255, 1);
+    background-image: url(https://image.flaticon.com/icons/svg/183/183850.svg);
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    background-position: 1px;
+    border-radius: 15px;
+}
+
+.layer-switcher button:hover {
+    background-color: transparent;
+}
+
+/* ESTIL ESCALA GRAFICA*/
+.ol-scale-line-inner {
+    border: 1px solid #000;
+    border-top: none;
+    color: #000;
+    font-size: 10px;
+    text-align: center;
+    margin: 1px;
+    will-change: contents,width;
+}
+
+.ol-scale-line {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    bottom: 8px;
+    left: 8px;
+    padding: 2px;
+    position: absolute;
+}
+
+/* _________________________*/
+/* FINAL ELEMENTS OPENLAYERS */
+/* _________________________*/
+
+/* ________________________*/
+/*        CAPÇALERA        */
+/*_________________________*/
+#barra_menu{
+	background-color: #e6e6e6;
+  padding: 0px;
+}
+
+#barra_menu ul li a{
+	color: #515151;
+}
+
+#contenedor_menu{
+	width: 80%;
+}
+
+#navbar{
+	position: relative;
+	z-index: 20;
+}
+
+#item-nav{
+	padding-top: 15px;
+}
+
+
+#navbar li.casa > a:hover{
+  color: #ffffff;
+  background-color: #9e9e9e;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  height: 49px;
+}
+
+#navbar li.visors > a:hover{
+  color: #ffffff;
+  background-color: #98882a;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  height: 49px;
+}
+
+#navbar li.cataleg > a:hover{
+  color: #ffffff;
+  background-color: #3255b0;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  height: 49px;
+}
+
+#navbar li.servicis > a:hover{
+  color: #ffffff;
+  background-color: #31afb0;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  height: 49px;
+}
+
+#navbar li.mapes > a:hover{
+  color: #ffffff;
+  background-color: #ea5d12;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  height: 49px;
+}
+
+#navbar li.info > a:hover{
+  color: #ffffff;
+  background-color: #cb4756;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  height: 49px;
+}
+
+#navbar li.marclegal > a:hover{
+  color: #ffffff;
+  background-color: #17b567;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  height: 49px;
+}
+
+/* Menu Social */
+.contenedor_social {
+	float: right;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.contenedor_social li {
+	display: block;
+	float: left;
+	padding-top: 10px;
+	margin-left: 3px;
+}
+
+.contenedor_social li a {
+	display: block;
+	width: 29px;
+	height: 29px;
+	color: #e6e6e6;
+	background-color: #b7b7b7;
+	padding: 5px;
+	text-align: center;
+	border-radius: 6px;
+	-moz-transition: background-color .3s ease-in-out;
+	-webkit-transition: background-color .3s ease-in-out;
+	transition: background-color .3s ease-in-out;	
+}
+
+.contenedor_social li .fb:hover {
+	background-color: #3b5998;
+}
+
+.contenedor_social li .tw:hover {
+	background-color: #00aced;
+}
+
+.contenedor_social li .yt:hover {
+	background-color: #c4302b;
+}
+
+.banner{
+	padding-left: 2%;
+}
+
+#menu_mapes{ 
+  border-top: #baab6b solid 8px;
+  border-radius: 0 0 10 10px; 
+  background-color: #e6e6e6; 
+  color: #515151; 
+}
+
+#menu_mapes a{
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+#menu_mapes li.generic > a:hover{
+  color: #ffffff;
+  background-color: #98882a;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+}
+
+#menu_mapes li.ambiental > a:hover{
+  color: #ffffff;
+  background-color: #009900;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+}
+
+#menu_mapes li.turisme > a:hover{
+  color: #ffffff;
+  background-color: #00b8e6;
+  -webkit-transition: background-color .4s ease 50ms, color .4s ease 50ms;
+  transition: background-color .4s ease 50ms, color .4s ease 50ms;
+}
+/*//////////////////////////////////// BOOTSTRAP MODIFICAT ////////////////////////////     */
+
+/* BOTÓ DE MENU COLLAPSE  */
+.navbar-toggle {
+  position: relative;
+  float: left;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.navbar-toggle:focus {
+  outline: 0;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
+@media (min-width: 1180px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+/* CONTINGUT DE BARRA DE MENU HEADER EN MARGENS LATERALS  */
+
+.contenedor_menu {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  width: 1180px;
+}
+
+@media (min-width: 768px) {
+  .navbar-collapse {
+    width: auto;
+    border-top: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  .navbar-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+
+  .navbar-fixed-top .navbar-collapse,
+  .navbar-static-top .navbar-collapse,
+  .navbar-fixed-bottom .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+  max-height: 340px;
+}
+
+ @media (max-width: 767px) {
+  #navbar-color{
+    display: none;
+  }
+}
+
+
+
+/* FINAL CONTINGUT JAVI */
+
+
+/* CONTENT _ HEC*/
+
+.cabecera{
+	border-top: 6px solid #867514;
+	z-index: 20;
+	position: relative;
+	background-color: white;
+}
+
+.part1{
+	float: left;
+	margin-right: 0.5em;
+}
+
+.part2{
+	padding-right: 0.5em;
+	text-align: justify;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.img-carousel {	
+	width: 100%;	
+}
+
+.sr-only{
+	color:black;
+	opacity: 1;
+}
+
+section{
+	margin-bottom: 1em;
+}
+
+/*.carousel-control-next{
+	background-color: #ccc;
+	opacity: 0;
+}*/
+.carousel-control-next:hover{
+	background-color: #ccc;
+	opacity: 0.5;
+}
+
+header{
+	margin-bottom: 1em;	
+}
+
+.content{
+	padding:2%;
+	padding-bottom: 0px;
+	background-color: #eee;
+}
+
+.titul{
+	color: #515151;
+	margin: 32px 0 12px 0;
+}
+
+.carousel-inner{
+	background-color: #fff;
+  height: 100%;
+}
+
+.item-link{
+	color: #515151;
+}
+
+.item-link:hover{
+	text-decoration: none;
+	color: #515151;
+}
+
+.items-info{
+	padding: 5%;	
+}
+
+.item-info-out{
+	padding: 0.5em;
+}
+
+.item-info:hover{
+	background-color: Orange;
+}
+
+.item{
+	background-color: #fff;
+	padding: 1.5em;
+	height:100%;
+	text-align: justify;
+}
+
+.item-info{
+	background-color: #fff;
+	padding: 1.5em;
+	height:100%;
+}
+.info-txt{
+	text-align: justify;
+}
+
+.baix{
+	background-color: #fff;
+	border-top: solid #d6d6d6 2px;
+	text-align: center;
+	padding-bottom: 1.2em;
+}
+
+.row > .column{
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+}
+
+#e-titul{
+  width: 100%;
+  font-family: 'Raleway', arial, tahoma;
+  font-size: 14px;
+  font-weight: 800; 
+  color: #fff;
+  background-color: #e70741;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 12px 7px;
+  margin-bottom: 10px;
+}
+
+.item-right{
+	text-align: center;
+	text-decoration: none;
+}
+
+.item-right:hover{
+	text-decoration: none!important;
+}
+
+.text-links{
+	color:black;
+}
+
+.text-links:hover{
+	color:black;
+	text-decoration: none!important;
+}
+
+
+/* CONTENT HEC   */
+
+/*PARALAX*/
+#parallax-img {
+
+  background-position: 0 50%;
+
+  display: table;
+
+  height: 220px;
+
+  position: relative;
+
+  width: 100%;
+
+  -webkit-background-size: cover;
+
+  -moz-background-size: cover;
+
+  -o-background-size: cover;
+
+  background-size: cover;
+
+	}
+
+
+@media (max-width: 768px) {
+  #parallax-img{
+    
+    display: none;
+
+  }
+}
+
+
+	
+
+	/*PARAL-LAX */

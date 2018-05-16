@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Visor genèric Pedreguer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="img/Escut.png" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800%7CRoboto:400,500,700" rel="stylesheet">
+    <!-- Openlayers -->
+    <link rel="stylesheet" type="text/css" href="css/ol.css">
+    <script src="js/ol.js"></script>
+    <!-- Control -->
+    <link rel="stylesheet" type="text/css" href="http://upvusig.car.upv.es/lib-js/ol3.5.0/ol3-layerswitcher-master/src/ol3-layerswitcher.css" />
+    <script type="text/javascript" src="http://upvusig.car.upv.es/lib-js/ol3.5.0/ol3-layerswitcher-master/src/ol3-layerswitcher.js"></script>
+    <!--Estils-->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/estil.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!--JQuery-->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap.js"></script>
+    <!-- Libreria sistemas de referencia -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.12/proj4-src.js"></script>
+</head>
+
+<body>
+    <div>
+        <section class="container">
+            <header class="cabecera">
+                <div class="banner container">
+                    <a href="index.html" title="Pedreguer"><img src="img/logo.png" alt="Ajuntament de Pedreguer"/></a>
+                </div>
+                <nav class="navbar navbar-expand-md" id="barra_menu" style="padding-left: 16px;">
+                    <!--<a class="navbar-brand" href="#">Expand at md</a>-->
+                    <button class="navbar-toggler container" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <div class="container">
+                            <div class="row">
+                                <ul id="contenedor_menu" class="navbar-nav mr-auto">
+                                    <li class="nav-item casa">
+                                        <a class="nav-link" href="index.html" style=" font-size: 22px;"><i class="fa fa-home" ></i></a>
+                                    </li>
+                                    <li class="nav-item visors dropdown" style="background-color: #98882a;">
+                                        <a class="nav-link" id="item-nav" data-toggle="dropdown" href="generic.html" style="color: #ffffff;">Visors <i class="fa fa-angle-down"></i> </a>
+                                        <ul id="menu_mapes" class="dropdown-menu">
+                                            <li class="generic"><a class="nav-link" href="generic.html">Genèric</a></li>
+                                            <li class="ambiental"><a class="nav-link" href="#">Ambiental</a></li>
+                                            <li class="turisme"><a class="nav-link" href="#">Turisme</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item cataleg">
+                                        <a class="nav-link" id="item-nav" href="#">Catàleg</a>
+                                    </li>
+                                    <li class="nav-item servicis">
+                                        <a class="nav-link" id="item-nav" href="#">Servicis</a>
+                                    </li>
+                                    <li class="nav-item mapes">
+                                        <a class="nav-link" id="item-nav" href="#">Mapes</a>
+                                    </li>
+                                    <li class="nav-item info">
+                                        <a class="nav-link" id="item-nav" href="sections/que_es.html">Info</a>
+                                    </li>
+                                    <li class="nav-item marclegal">
+                                        <a class="nav-link" id="item-nav" href="sections/marc_legal.html">Marc legal</a>
+                                    </li>
+                                </ul>
+                                <ul class="contenedor_social" style="padding-right: 15px;">
+                                    <li><a href="https://www.facebook.com/Ajuntament-de-Pedreguer-267068203304633/" target="_blank" class="fb"><i class="fa fa-facebook" style="color:#eee;"></i></a></li>
+                                    <li><a href="https://twitter.com/ajuntpedreguer" target="_blank" class="tw"><i class="fa fa-twitter" style="color:#eee;"></i></a></li>
+                                    <li><a href="https://www.youtube.com/user/AjuntPedreguer" target="_blank" class="yt"><i class="fa fa-youtube" style="color:#eee;"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <div id="navbar-color" style="margin-top: -8px; background-color: #a1a1a1; height: 13px;">
+                    <nav class="navbar navbar-expand-md nav-color">
+                    <div class="collapse navbar-collapse" id="navbar" ">
+                        <div class="container">
+                            <div class="row" style="height: 5px;">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item" style="background-color: #e6e6e6; width: 36.44px; height: 5px;">
+                                        <a class="nav-link" ></a>
+                                    </li>
+                                    <li class="nav-item" style="background-color: #baae6b; width: 75.36px; height: 5px;">
+                                        <a class="nav-link" ></a>
+                                    </li>
+                                    <li class="nav-item" style="background-color: #4c72d4; width: 70.39px; height: 5px;">
+                                        <a class="nav-link" ></a>
+                                    </li>
+                                    <li class="nav-item" style="background-color: #64cbcc; width: 71.67px; height: 5px;">
+                                        <a class="nav-link" ></a>
+                                    </li>
+                                    <li class="nav-item" style="background-color: #ff813e; width: 64.38px; height: 5px;">
+                                        <a class="nav-link" ></a>
+                                    </li>
+                                    <li class="nav-item" style="background-color: #d37b85; width: 43.86px; height: 5px;">
+                                        <a class="nav-link" ></a>
+                                    </li>
+                                    <li class="nav-item" style="background-color: #58cf94; width: 90.2px; height: 5px;">
+                                        <a class="nav-link" ></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                </div>
+            </header>
+        </section>
+        <section id="visor">
+            <div id="map" class="col-xs-12 col-sm-12 col-md-12" align="center">
+                <script type="text/javascript" src="js/mapa.js"></script>
+            </div>
+        </section>
+</body>
+</div>
+
+</html>
